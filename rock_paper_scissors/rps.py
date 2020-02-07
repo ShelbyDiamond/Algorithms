@@ -6,13 +6,13 @@ def rock_paper_scissors(n: int) -> list:
    choices = ["rock", "paper", "scissors"]
    combinations = []
 
-   def help(b: int, result: list):
+   def helper(b: int, result: list):
      if b == 0:
         combinations.append(result)
         return
-      for i in choices:
-        help(b - 1, result + [i])
-    help(n, [])
+    for i in choices:
+        helper(b - 1, result + [i])
+        helper(n, [])
    return combinations
 
 print(rock_paper_scissors(1))
